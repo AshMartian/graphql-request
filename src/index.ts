@@ -117,7 +117,7 @@ export async function request<T extends any>(
 export default request
 
 async function getResult(response: Response): Promise<any> {
-  const contentType = response.headers.get('Content-Type')
+  const contentType = response.headers.get('content-type')
   if (contentType && contentType.startsWith('application/json')) {
     return response.json()
   } else {
